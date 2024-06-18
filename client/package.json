@@ -1,0 +1,43 @@
+{
+  "name": "kma",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "homepage": "https://kmanalysis.com",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@mui/icons-material": "^5.15.20",
+    "@mui/material": "^5.15.20",
+    "@mui/styled-engine-sc": "^6.0.0-alpha.18",
+    "axios": "^1.3.3",
+    "crisp-sdk-web": "^1.0.15",
+    "framer-motion": "^9.1.7",
+    "js-cookie": "^3.0.1",
+    "moment": "^2.29.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.7.1",
+    "react-query": "^3.39.3",
+    "react-quill": "^0.0.2",
+    "react-router-dom": "^6.22.3",
+    "react-slick": "^0.29.0",
+    "react-use-cookie": "^1.4.0",
+    "slick-carousel": "^1.8.1",
+    "styled-components": "^6.1.11"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "@vitejs/plugin-react": "^3.1.0",
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.2.7",
+    "vite": "^4.1.0"
+  }
+}

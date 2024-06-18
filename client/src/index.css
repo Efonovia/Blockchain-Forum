@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,300;0,600;0,700;1,300;1,400&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Titillium Web", sans-serif;
+}
+.bg {
+  background-image: url("./assets/bg.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.bg-rev {
+  background-image: url("./assets/back2.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+ 
+
+.bg-blue {
+  background-color: #090abb;
+}
+
+.blue {
+  color: #090abb;
+}
+
+.new {
+  background: #5f2c82;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #49a09d, #5f2c82);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #49a09d, #5f2c82); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+}
+
+.bg-woman{
+  background-image: url("./assets/logins.png");
+  background-position: center;
+  opacity: 0.3;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+/* from right to left */
+.bg-gradient-to-l {
+  /* background: linear-gradient(to left, #ff015b, #ff5082, #ff94aa, #fbd6d2, #f8f8f8, #c2e2f6, #8dcbf3, #58b5f0, #1d329e); */
+  /* background: linear-gradient(to left, #ff015b, #ff5082, #ff94aa, #fbd6d2, #f8f8f8, #c2e2f6, #8dcbf3, #58b5f0, #1d329e);
+  
+  background: #b92b27;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #1565C0, #b92b27);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #1565C0, #b92b27); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+ 
+}
