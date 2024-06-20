@@ -20,11 +20,11 @@ export default function AdminNav({ classColor }) {
         className={`relative ${classColor} flex items-center justify-between flex-wrap  p-2 pt-3 md:px-24`}
         style={{ position: "scroll", zIndex: 90 }}
       >
-        <div className="pl-4 flex items-center pt-3 flex-shrink-0 text-white md:mr-24">
+        <div className="pl-4 flex items-center pt-3 flex-shrink-0 text-white md:ml-64">
           <Link to="/">
             {/* large screen */}
             <span className=" flex-shrink items-center w-1/2 pb-2   ">
-              <h1 className="text-2xl">Administrator View</h1>
+              <h1 className="text-2xl">ADMINISTRATOR VIEW</h1>
             </span>
           </Link>
         </div>
@@ -50,9 +50,11 @@ export default function AdminNav({ classColor }) {
           <div className="font-bold lg:flex items-center justify-evenly md:space-x-20 md:mr-12">
 
             <Fragment>
-                <span className="rounded-full px-3 font-medium py-1 bg-white text-black responsive-header block cursor-pointer  lg:inline-block lg:mt-0 transition duration-500 ease-in-out  transform hover:-translate-z-1 hover:scale-110">
-                    Logout
-                  </span>
+                <Link to="/signin">
+                    <span className="rounded-full px-3 font-medium py-1 bg-white text-black responsive-header block cursor-pointer  lg:inline-block lg:mt-0 transition duration-500 ease-in-out  transform hover:-translate-z-1 hover:scale-110">
+                        Logout
+                    </span>
+                </Link>
             </Fragment>
           </div>
         </div>

@@ -20,7 +20,7 @@ export default function Complaints() {
   const [newMessage, setNewMessage] = React.useState("")
   const getComplaintsQuery = useQuery("get users complaints", () => complaintGetRequest({ route: `user/${userId}` }))
 
-  const sendMessageMutation = useMutation(complaintPostRequest, {
+  const complaintMessagesMutation = useMutation(complaintPostRequest, {
     onSuccess: data => {
         console.log(data)
         if(!data.ok) {
@@ -31,6 +31,19 @@ export default function Complaints() {
     onSettled: getComplaintsQuery.refetch
   })
 
+    function selectAComplaint(id) {
+        setSelectedComplaint(id)
+
+        const messageIds = getComplaintsQuery.data?.body?.find(complaint => complaint.id === id)?.messages?.map(msg => {
+            if(!msg.seen && msg.sender === "admin") {
+                return msg.id
+            }
+        })
+
+        const data = { messageIds }
+        complaintMessagesMutation.mutate({ postDetails: data, route: `${id}/updateMessages` })
+    }
+
     if(getComplaintsQuery.isLoading) {
         return <CircularProgress sx={{margin: "200px 500px", color: "blue"}} size={100}/>
     }
@@ -40,7 +53,7 @@ export default function Complaints() {
     }
 
     const complaintListHTML = [...getComplaintsQuery.data?.body?.sort((a,b) => new Date(a.createdAt)-new Date(b.createdAt))].map(complaint => {
-        return <li key={complaint.id} onClick={() => setSelectedComplaint(complaint.id)} className={`contact ${complaint.id === selectedComplaint && "active"}`}>
+        return <li key={complaint.id} onClick={() => selectAComplaint(complaint.id)} className={`contact ${complaint.id === selectedComplaint && "active"}`}>
                     <div className="wrap">
                         {complaint.unseen > 0 && <span className="contact-status online">{complaint.unseen}</span>}
                         <h2 className="meta">{complaint.title}</h2>
@@ -58,7 +71,7 @@ export default function Complaints() {
         }
 
         return <li key={message.id} className="replies">
-                    <span style={{float: "left", fontWeight: 800, marginRight: "15px"}}>ADMIN</span>
+                    <span style={{float: "left", fontWeight: 800, marginRight: "25px"}}>ADMIN</span>
                     <p>{message.messageContent}</p>
                 </li>
     })
@@ -80,7 +93,7 @@ export default function Complaints() {
         }
 
         setNewMessage("")
-        sendMessageMutation.mutate({ postDetails: formData, route: `${selectedComplaint}/addMessage` })
+        complaintMessagesMutation.mutate({ postDetails: formData, route: `${selectedComplaint}/addMessage` })
         console.log(formData)
     }
 
