@@ -32,7 +32,7 @@ function Stack() {
         <Route path="*" element={<Errors />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/signin" element={<Signin />} />
-        <Route path="/complaints" element={<Complaints />} />
+        <Route path="/complaints/:userId" element={<Complaints />} />
         <Route path="/urlchecker" element={<URLChecker />} />
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/admin/:adminId/home" element={<AdminHome />} />

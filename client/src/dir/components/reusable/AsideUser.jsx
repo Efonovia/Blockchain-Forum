@@ -4,9 +4,11 @@ import { FaHouseUser, FaUserAlt } from "react-icons/fa";
 import LanguageIcon from '@mui/icons-material/Language';
 import HowToVoteIcon from '@mui/icons-material/HowToVote';
 import { Link } from "react-router-dom";
+import useAuth from "../../context/userAuth/useAuth";
 
 
 function AsideUser() {
+  const { id } = useAuth();
  
 
   return (
@@ -63,7 +65,7 @@ function AsideUser() {
             </div>
           
             <div className="cursor-pointer flex justify-center items-center">
-              <Link to="/complaints">
+              <Link to={`/complaints/${id}`}>
                 <div className="  flex-wrap">
                   <div className="flex justify-center">
                     <HowToVoteIcon size={24} className="blue " />
